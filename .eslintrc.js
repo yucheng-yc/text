@@ -13,6 +13,6 @@ module.exports = {
     ],
     rules: {
         "max-lines-per-function": ["error", 80],
-        "max-lines": ["error", 300]
+        "max-lines": ["error", 50]
     }
 };
