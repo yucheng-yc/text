@@ -41,7 +41,8 @@
         "test:mp-baidu": "cross-env UNI_PLATFORM=mp-baidu jest -i",
         "test:mp-weixin": "cross-env UNI_PLATFORM=mp-weixin jest -i",
         "eslint": "eslint --ext .js,.vue src",
-        "eslintfix": "eslint --fix --ext .js,.vue src"
+        "eslintfix": "eslint --fix --ext .js,.vue src",
+        "precommit": "lint-staged"
     },
     "dependencies": {
         "@dcloudio/uni-app-plus": "^2.0.0-29820201110001",
@@ -106,8 +107,9 @@
         }
     },
     "lint-staged": {
-        "**/*.{js,vue}": [
-            "npm run eslint"
+        "src/**/*.{js,vue}": [
+            "eslint --fix",
+            "git add"
         ]
     }
 }
